@@ -18,7 +18,7 @@ var updateGuessesLeft = function() {
   };
   
   var updateLetterToGuess = function() {
-    this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
+    this.letterToGuess = this.computerChoice[Math.floor(Math.random() * this.computerChoice.length)];
   };
   var updateGuessesSoFar = function() {
     // Here we take the guesses the user has tried -- then display it as letters separated by commas. 
