@@ -8,7 +8,7 @@ var losses = 0;
 var guesses = 9;
 var guessesLeft = 9;
 var guessedLetters = [];
-var letterToGuess = null;
+var letterToGuess = [];
 
 //Allows the user 9 guesses
 // guesses = guesses || 9
