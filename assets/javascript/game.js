@@ -29,6 +29,26 @@ document.onkeyup = function(event) {
         guessesLeft--; //decrementing the guesses left
     }  
    
+  
+
+// Taking the tallies and displaying them in HTML    
+var html = "<h1>The Psychic Game</h1>" + 
+"<p>Guess what letter I'm thinking of!</p>" +
+"<p>Total Wins: " + 
+wins + 
+"</p>" +
+"<p>Total Losses: " + 
+losses + 
+"</p>" +
+"<p>Guesses Left: " + 
+guessesLeft + 
+"</p>" +
+"<p>Your Guesses so far: " +
+guessesSoFar +
+"</p>"
+;
+// Placing the html into the game ID
+document.querySelector('#game').innerHTML = html;
 }
 
 
