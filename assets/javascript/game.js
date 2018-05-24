@@ -11,19 +11,20 @@ var guessesLeft = 9;
 var guessedSoFar = [];
 
 document.onkeyup = function(event) {
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase(); //taking in user guess
-    guessesSoFar.push(userGuess); //pushing user guess to guesses so far
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase(); //user guess
+    var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)]; // trigger computer guess
+    guessedSoFar.push(userGuess); //pushing user guess to guesses so far
     if (userGuess == computerGuess) {
         wins++;
         alert('Way to go! You\'ve guesesed corrrectly. You Won!');
         guessesLeft = 9; //reseting the guesses back to 9 so that the user can play again
-        guessesSoFar.length = 0; //this removes everything from the guesses so far array, so that the guesses from the previous round don't show
+        guessedSoFar.length = 0; //this removes everything from the guesses so far array, so that the guesses from the previous round don't show
     }
     else if (guessesLeft == 0){
         losses++;
         alert('You didn\'t guess the correct letter. You lost. Refresh to try again.');
         guessesLeft = 9;
-        guessesSoFar.length = 0;
+        guessedSoFar.length = 0;
     }
     else if (userGuess !== computerGuess){
         guessesLeft--; //decrementing the guesses left
@@ -32,7 +33,7 @@ document.onkeyup = function(event) {
   
 
 // Taking the tallies and displaying them in HTML    
-var html = "<h1>The Psychic Game</h1>" + 
+var html = 
 "<p>Guess what letter I'm thinking of!</p>" +
 "<p>Total Wins: " + 
 wins + 
@@ -44,7 +45,7 @@ losses +
 guessesLeft + 
 "</p>" +
 "<p>Your Guesses so far: " +
-guessesSoFar +
+guessedSoFar +
 "</p>"
 ;
 // Placing the html into the game ID
