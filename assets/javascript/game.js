@@ -16,13 +16,13 @@ document.onkeyup = function(event) {
     guessedSoFar.push(userGuess); //pushing user guess to guesses so far
     if (userGuess == computerGuess) {
         wins++;
-        alert('Way to go! You\'ve guesesed corrrectly. You Won!');
+        alert('Correct guess you are psychic!');
         guessesLeft = 9; //reseting the guesses back to 9 so that the user can play again
         guessedSoFar.length = 0; //this removes everything from the guesses so far array, so that the guesses from the previous round don't show
     }
     else if (guessesLeft == 0){
         losses++;
-        alert('You didn\'t guess the correct letter. You lost. Refresh to try again.');
+        alert(' You couldnt predict that and now have to refresh to try again.');
         guessesLeft = 9;
         guessedSoFar.length = 0;
     }
